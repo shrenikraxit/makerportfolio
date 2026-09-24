@@ -49,38 +49,6 @@
   }
 })();
 
-/* Open the aviation paper without leaving the portfolio. The link remains a
-   normal PDF link when dialog support or JavaScript is unavailable. */
-(function () {
-  function initPaperViewer() {
-    var trigger = document.querySelector("[data-pdf-overlay]");
-    var viewer = document.getElementById("paper-viewer");
-    if (!trigger || !viewer || typeof viewer.showModal !== "function") return;
-
-    var close = viewer.querySelector("[data-pdf-close]");
-
-    trigger.addEventListener("click", function (event) {
-      event.preventDefault();
-      viewer.showModal();
-    });
-
-    if (close) close.addEventListener("click", function () {
-      viewer.close();
-      trigger.focus();
-    });
-
-    viewer.addEventListener("click", function (event) {
-      if (event.target === viewer) viewer.close();
-    });
-  }
-
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", initPaperViewer);
-  } else {
-    initPaperViewer();
-  }
-})();
-
 /* FTC photo rotation. Reduced-motion visitors still receive each photo;
    the stylesheet removes the fade transition for them. */
 (function () {

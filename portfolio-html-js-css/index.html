@@ -11,7 +11,7 @@
 <link rel="stylesheet"
   href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&amp;family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap">
 
-<link rel="stylesheet" href="style.css?v=18">
+<link rel="stylesheet" href="style.css?v=12">
 </head>
 <body>
 
@@ -80,6 +80,7 @@
   <div class="portfolio-layout">
     <aside class="identity-rail" aria-label="Portfolio navigation and profile">
       <div class="rail-main">
+        <p class="site-kicker">Portfolio</p>
         <div class="brand-heading">
           <span class="brand-mark" aria-hidden="true"><img class="brand-icon" src="brand-icon-transparent.png" alt=""></span>
           <h1 class="name">Shrenik Rakshit</h1>
@@ -147,6 +148,7 @@
 
     <main class="workstream" id="projects">
   <section class="sec project-groups">
+    <p class="sec-label">Projects</p>
     <p class="project-group-label project-group-label-selected">Selected work</p>
 
     <article class="entry entry-featured entry-ftc" id="ftc-robotics">
@@ -314,40 +316,41 @@
     </article>
 
     <article class="entry entry-featured entry-aviation" id="aviation-recovery">
-      <div class="spec">
+      <div class="spec"><span class="yr">2025</span><span class="cat"><svg class="ic" aria-hidden="true">
+            <use href="#i-data" />
+          </svg>Data &amp; decisions</span>
         <figure class="shot"><img src="map.jpg" width="1000" height="637" loading="lazy"
             alt="Map of the continental United States shaded green where recovering airports outnumber declining ones and red where the reverse holds.">
           <figcaption>Green where recovering airports outnumber declining ones.</figcaption>
         </figure>
+        <p class="reach">CJSJ, Columbia Junior Science Journal, semifinalist for 2025-2026.</p>
       </div>
       <div class="body">
         <div class="head">
           <h3>Small Airports, Big Comeback</h3>
-          <span class="cred"><svg class="ic" aria-hidden="true"><use href="#i-verified" /></svg>CJSJ semifinalist &middot; 2025&ndash;2026</span>
         </div>
-        <p class="what">After COVID, I noticed that some small airports seemed busier than before. I wanted to know if
-          this was happening across the country, so I analyzed 16 years of federal passenger records from 1,038 U.S.
-          airports. I compared traffic before and after the shutdown years and found that small hubs grew much faster
-          than major hubs.</p>
-        <p class="deeper"><a class="paper-cta" href="aviation-recovery-paper.pdf" data-pdf-overlay>
-            <svg class="action-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M19 2H8a2 2 0 0 0-2 2v4H5a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h1a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2Zm0 18H8v-2h9a2 2 0 0 0 2-2v4Zm0-4H5v-6h14v6ZM8 8V4h11v4H8Z"/><path fill="currentColor" d="M6 11h2.1c1.4 0 2.3.8 2.3 2s-.9 2-2.3 2H7.3v1H6v-5Zm2 2.9c.7 0 1.1-.3 1.1-.9s-.4-.9-1.1-.9h-.7v1.8H8Zm3.1-2.9h2c1.8 0 3 1 3 2.5s-1.2 2.5-3 2.5h-2v-5Zm1.9 3.9c1 0 1.7-.5 1.7-1.4s-.7-1.4-1.7-1.4h-.6v2.8h.6Zm3.7-3.9H20v1.1h-2v1h1.8v1.1H18V16h-1.3v-5Z"/></svg>
-            Read the full research paper <span aria-hidden="true">&nearr;</span></a></p>
+        <p class="what">Aviation theory says big hubs win permanently, because scale and connectivity compound. COVID
+          was the largest shock the system has ever taken. Did the hierarchy snap back, or did it move? I built a
+          pipeline over sixteen years of federal route filings and tested it.</p>
+        <ul class="evidence">
+          <li><b>16 years</b> of BTS T-100 records (2009&ndash;2024) across <b>1,038</b> airports; 2018&ndash;19
+            compared against 2023&ndash;24, with the shutdown years deliberately removed</li>
+          <li>Small hubs grew <b>12.1%</b> at the median against <b>1.3%</b> for major hubs</li>
+          <li><b>Kruskal&ndash;Wallis H = 11.69, p = 0.009</b>; hub class fixed at 2018 so growth can’t quietly redefine
+            the category</li>
+        </ul>
+        <p class="limit"><svg class="ic" aria-hidden="true">
+            <use href="#i-open" />
+          </svg><span>A two-period comparison, not a causal model. Hub class explains under 1% of the
+            variance.</span></p>
+        <p class="deeper"><a href="aviation.html">Full case study: four decisions and what each one cost
+            &rarr;</a></p>
       </div>
-      <aside class="project-proof aviation-proof" aria-label="Aviation research method and results">
-        <p class="project-proof-title">Research &amp; results</p>
-        <div class="proof-overview">
-          <div><span>Role</span><b>Independent researcher</b></div>
-          <div><span>Data</span><b>16 years &middot; 1,038 airports</b></div>
-          <div><span>Comparison</span><b>2018&ndash;2019 vs. 2023&ndash;2024</b></div>
-          <div><span>Technology Stack</span><b>Python &middot; pandas &middot; SciPy &middot; Plotly</b></div>
-        </div>
-        <div class="proof-stories">
-          <p><b>Built the dataset</b><span>Cleaned BTS T-100 records, removed zero-passenger rows, and combined monthly flight segments into airport-level traffic totals.</span></p>
-          <p><b>Made a fair comparison</b><span>Compared two-year averages before and after the shutdown years and kept each airport&rsquo;s hub class fixed to its 2018 category.</span></p>
-          <p><b>Tested the pattern</b><span>A Kruskal&ndash;Wallis test found a significant difference across hub classes: H = 11.69, p = 0.009.</span></p>
-          <p><b>Main finding</b><span>Median traffic grew 12.1% at small hubs, compared with 1.3% at major hubs. Airport size still explained less than 1% of the full variation.</span></p>
-        </div>
-      </aside>
+      <p class="why"><strong>Why it matters</strong>Which airports keep service is not only an airline question. For a
+        lot of communities the nearest small hub is the only realistic way onto the network at all, so a durable shift
+        in where traffic lands is a shift in who stays easy to reach.<span class="took"><b>What I took from it:</b> The
+          study turned on a definition, not a test. Fixing hub class at 2018 is the only thing that
+          kept “small hubs grew faster” from being a tautology.</span></p>
     </article>
 
     <article class="entry entry-secondary entry-sign-language" id="reading-sign-language">
@@ -420,54 +423,57 @@
       <div class="course-group">
         <h4><svg class="ic" aria-hidden="true">
             <use href="#i-data" />
-          </svg>AP courses</h4>
+          </svg>Modeling, data &amp; inference</h4>
         <ul>
-          <li>AP Statistics</li>
-          <li>AP Calculus BC</li>
+          <li>AP Statistics <em>Aviation Recovery</em></li>
+          <li>AP Calculus BC <em>FTC Robotics</em></li>
           <li>AP Precalculus</li>
-          <li>AP Physics C</li>
+          <li>Geometry &amp; Algebra 2 Honors</li>
+        </ul>
+      </div>
+      <div class="course-group">
+        <h4><svg class="ic" aria-hidden="true">
+            <use href="#i-process" />
+          </svg>Physical systems &amp; design</h4>
+        <ul>
+          <li>AP Physics C <em>FTC Robotics, Smart Cart</em></li>
           <li>AP Physics 1</li>
-          <li>AP Psychology</li>
-          <li>AP Microeconomics</li>
-          <li>AP Macroeconomics</li>
+          <li>Purdue THINK Program <em>selective</em></li>
+          <li>Rutgers SLAAM Program <em>selective</em></li>
         </ul>
       </div>
       <div class="course-group">
         <h4><svg class="ic" aria-hidden="true">
             <use href="#i-compute" />
-          </svg>Self-taught skills</h4>
+          </svg>Computation</h4>
         <ul>
-          <li><b>Programming</b><em>Java, Python, Swift, SwiftUI, HTML, CSS, JavaScript, Arduino</em></li>
-          <li><b>Data &amp; research</b><em>pandas, NumPy, SciPy, Plotly, statistical testing, data cleaning, aggregation, and visualization</em></li>
-          <li><b>AI &amp; computer vision</b><em>YOLOv8, Core ML, video transformers, object detection, camera vision, embeddings, retrieval, and generated-question pipelines</em></li>
-          <li><b>Mobile &amp; cloud</b><em>ARKit, LiDAR mapping, voice interfaces, haptics, shortest-path routing, AWS storage, and accessible iOS design</em></li>
-          <li><b>Robotics &amp; fabrication</b><em>Sensor fusion, localization, motion profiling, autonomous path following, CAD, 3D printing, and waterjet cutting</em></li>
-          <li><b>Product development</b><em>Prototyping, field testing, technical presentations, competition strategy, fundraising, and user feedback</em></li>
+          <li>Cybersecurity, Fairleigh Dickinson <em>dual enrollment</em></li>
+          <li>Swift / iOS <em>self-directed: Testify, GuideLight</em></li>
+        </ul>
+      </div>
+      <div class="course-group">
+        <h4><svg class="ic" aria-hidden="true">
+            <use href="#i-people" />
+          </svg>Human factors &amp; communication</h4>
+        <ul>
+          <li>AP Psychology <em>GuideLight, Testify</em></li>
+          <li>AP Micro &amp; Macroeconomics <em>Aviation Recovery</em></li>
+          <li>Public Speaking</li>
         </ul>
       </div>
     </div>
   </section>
 
+  <p class="colophon">
+    Every project on this page carries a “not established” note, in slate. That is deliberate: the orange marks
+    what someone outside this page verified, and the slate marks what I have not proved. A claim with neither is
+    just a claim. - Shrenik Rakshit, Hunterdon County, New Jersey.
+  </p>
+
     </main>
   </div>
 </div>
 
-<dialog class="pdf-viewer" id="paper-viewer" aria-labelledby="paper-viewer-title">
-  <div class="pdf-viewer-shell">
-    <header class="pdf-viewer-bar">
-      <div>
-        <span class="pdf-viewer-label">Research paper</span>
-        <h2 id="paper-viewer-title">Post-COVID Aviation Recovery</h2>
-      </div>
-      <div class="pdf-viewer-actions">
-        <a href="aviation-recovery-paper.pdf" target="_blank" rel="noopener noreferrer">Open separately &nearr;</a>
-        <button type="button" data-pdf-close aria-label="Close research paper">Close</button>
-      </div>
-    </header>
-    <iframe src="aviation-recovery-paper.pdf#view=FitH" title="Post-COVID Aviation Recovery research paper"></iframe>
-  </div>
-</dialog>
-
-<script src="app.js?v=20260923-1"></script>
+<script src="app.js?v=20260920-2"></script>
 </body>
 </html>

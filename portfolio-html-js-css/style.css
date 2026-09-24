@@ -99,7 +99,9 @@
 }
 
 .start-here a > span:last-child {
-  display: none;
+  color: var(--ink-2);
+  font-size: 0.78rem;
+  line-height: 1.4;
 }
 
 .start-here-theme {
@@ -308,135 +310,6 @@
 
 .demo-link .youtube-icon {
   color: currentColor;
-}
-
-.deeper .paper-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.32rem;
-  padding: 0.62rem 0.8rem;
-  border: 1px solid var(--verified);
-  border-radius: 3px;
-  background: var(--verified);
-  color: var(--raise);
-  font-weight: 700;
-  text-decoration: none;
-}
-
-.deeper .paper-cta .action-icon {
-  width: 0.9rem;
-  height: 0.9rem;
-  flex: none;
-  display: block;
-}
-
-.deeper .paper-cta:hover,
-.deeper .paper-cta:focus-visible {
-  border-bottom-color: var(--verified);
-  filter: brightness(1.08);
-}
-
-.pdf-viewer {
-  width: min(96vw, 1180px);
-  height: min(94vh, 900px);
-  max-width: none;
-  max-height: none;
-  padding: 0;
-  border: 1px solid var(--rule);
-  border-radius: 5px;
-  background: var(--paper);
-  color: var(--ink);
-  box-shadow: 0 24px 80px rgb(0 0 0 / 0.35);
-}
-
-.pdf-viewer::backdrop {
-  background: rgb(7 9 9 / 0.8);
-  backdrop-filter: blur(5px);
-}
-
-.pdf-viewer-shell {
-  display: grid;
-  grid-template-rows: auto minmax(0, 1fr);
-  height: 100%;
-}
-
-.pdf-viewer-bar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: 0.75rem 0.9rem;
-  border-bottom: 1px solid var(--rule);
-  background: var(--raise);
-}
-
-.pdf-viewer-label {
-  display: block;
-  color: var(--verified);
-  font-family: var(--mono);
-  font-size: 0.62rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
-.pdf-viewer h2 {
-  margin: 0.12rem 0 0;
-  font-family: var(--sans);
-  font-size: clamp(0.92rem, 2vw, 1.15rem);
-  line-height: 1.2;
-}
-
-.pdf-viewer-actions {
-  display: flex;
-  align-items: center;
-  gap: 0.55rem;
-  flex: none;
-  font-family: var(--mono);
-  font-size: 0.68rem;
-}
-
-.pdf-viewer-actions a,
-.pdf-viewer-actions button {
-  padding: 0.5rem 0.65rem;
-  border: 1px solid var(--rule);
-  border-radius: 3px;
-  background: transparent;
-  color: var(--ink);
-  font: inherit;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.pdf-viewer-actions button {
-  border-color: var(--verified);
-  background: var(--verified);
-  color: var(--raise);
-  font-weight: 700;
-}
-
-.pdf-viewer iframe {
-  width: 100%;
-  height: 100%;
-  border: 0;
-  background: #fff;
-}
-
-@media (max-width:600px) {
-  .pdf-viewer {
-    width: 100vw;
-    height: 100dvh;
-    border: 0;
-    border-radius: 0;
-  }
-
-  .pdf-viewer-bar {
-    align-items: flex-start;
-  }
-
-  .pdf-viewer-actions a {
-    display: none;
-  }
 }
 
 .entry-guidelight {
@@ -1174,15 +1047,9 @@ figure.plate figcaption {
 
 .courses {
   display: grid;
-  grid-template-columns: minmax(0, 0.72fr) minmax(0, 1.28fr);
-  gap: 2.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: 1.8rem 2.5rem;
   padding-block: 0 1rem;
-}
-
-.course-group {
-  padding: 1rem 1.1rem;
-  border-top: 2px solid var(--verified);
-  background: color-mix(in srgb, var(--raise) 76%, transparent);
 }
 
 .course-group h4 {
@@ -1212,26 +1079,12 @@ figure.plate figcaption {
   line-height: 1.45
 }
 
-.course-group li b {
-  display: block;
-  color: var(--ink);
-  font-family: var(--display);
-  font-size: 0.94rem;
-}
-
 .course-group em {
   font-family: var(--mono);
   font-style: normal;
   font-size: 0.72rem;
   color: var(--ink-2);
   display: block;
-}
-
-@media (max-width:720px) {
-  .courses {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
 }
 
 /* ---------- colophon ---------- */
@@ -1994,46 +1847,6 @@ figure.plate figcaption {
   }
 
   .entry-guidelight>.body {
-    margin-top: 1rem;
-  }
-}
-
-/* Aviation feature: landscape result map and a full-width research summary. */
-.entry.entry-aviation {
-  grid-template-columns: minmax(0, 1.28fr) minmax(300px, 0.92fr);
-  gap: 0 2.5rem;
-}
-
-.entry-aviation>.spec {
-  display: block;
-  width: 100%;
-}
-
-.entry-aviation>.body {
-  max-width: none;
-  margin-top: 0;
-}
-
-.entry-aviation>.project-proof {
-  grid-column: 1 / -1;
-  width: 100%;
-  max-width: none;
-  margin-top: 1.4rem;
-}
-
-@media (max-width:900px) {
-  .entry.entry-aviation {
-    grid-template-columns: minmax(0, 1.15fr) minmax(270px, 1fr);
-    gap: 0 1.6rem;
-  }
-}
-
-@media (max-width:720px) {
-  .entry.entry-aviation {
-    grid-template-columns: 1fr;
-  }
-
-  .entry-aviation>.body {
     margin-top: 1rem;
   }
 }
