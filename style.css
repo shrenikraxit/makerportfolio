@@ -22,10 +22,37 @@
 
 .rail-main {
   display: grid;
-  gap: 1.45rem;
+  gap: 0;
+}
+
+.brand-heading {
+  margin-bottom: 1.15rem;
+}
+
+.standfirst {
+  margin-bottom: 0.85rem;
+}
+
+.rail-resume {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  width: 100%;
+  margin-bottom: 1.1rem;
+  font-family: var(--body);
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.rail-resume .ic {
+  width: 0.95rem;
+  height: 0.95rem;
 }
 
 .workstream {
+  --mono: "Archivo", "Helvetica Neue", Arial, sans-serif;
   min-width: 0;
   padding-block: 3.5rem 5rem;
 }
@@ -41,9 +68,14 @@
 }
 
 .start-here {
-  padding: 1rem;
-  border: 1px solid var(--rule);
-  background: color-mix(in srgb, var(--raise) 72%, transparent);
+  padding: 1.1rem 0 0;
+  border: 0;
+  border-top: 1px solid var(--rule);
+  background: transparent;
+}
+
+.start-here .section-kicker {
+  margin-bottom: 0.25rem;
 }
 
 .start-here-intro {
@@ -55,7 +87,7 @@
 
 .start-here ol {
   display: grid;
-  gap: 0;
+  gap: 0.35rem;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -64,7 +96,7 @@
 
 .start-here li {
   counter-increment: route;
-  border-top: 1px solid var(--rule-soft);
+  border: 0;
 }
 
 .start-here li:first-child {
@@ -75,7 +107,8 @@
   position: relative;
   display: grid;
   gap: 0.08rem;
-  padding: 0.68rem 0 0.68rem 1.65rem;
+  padding: 0.52rem 0.65rem 0.52rem 1.8rem;
+  border-left: 2px solid var(--rule);
   color: inherit;
   text-decoration: none;
 }
@@ -83,8 +116,8 @@
 .start-here a::before {
   content: "0" counter(route);
   position: absolute;
-  top: 0.74rem;
-  left: 0;
+  top: 0.58rem;
+  left: 0.55rem;
   color: var(--verified);
   font-family: var(--mono);
   font-size: 0.65rem;
@@ -122,19 +155,21 @@
 }
 
 .project-map {
-  padding-top: 0.35rem;
+  margin-top: 1.55rem;
+  padding-top: 0;
+  border-top: 0;
 }
 
 .project-map ul {
   display: grid;
-  gap: 0;
-  margin: 0.2rem 0 0;
+  gap: 0.35rem;
+  margin: 0.35rem 0 0;
   padding: 0;
   list-style: none;
 }
 
 .project-map li {
-  border-top: 1px solid var(--rule-soft);
+  border: 0;
 }
 
 .project-map li:first-child {
@@ -144,7 +179,8 @@
 .project-map a {
   display: grid;
   gap: 0.12rem;
-  padding: 0.62rem 0;
+  padding: 0.52rem 0.65rem;
+  border-left: 2px solid var(--rule);
   color: inherit;
   text-decoration: none;
 }
@@ -514,18 +550,22 @@
 }
 
 :root {
-  --paper: #F7F4EE;
-  --raise: #FFFDF9;
-  --ink: #15191B;
-  --ink-2: #58615F;
-  --rule: #E0DACE;
-  --rule-soft: #EDE8DE;
-  --verified: #B4471A;
-  --verified-bg: #F6E9E0;
-  --open: #5F6F6D;
+  --paper: #FFFFFF;
+  --raise: #FFFFFF;
+  --ink: #17324D;
+  --ink-2: #586A79;
+  --rule: #CCD8E1;
+  --rule-soft: #DEE7ED;
+  --verified: #316FA8;
+  --verified-bg: #E3EEF7;
+  --open: #6E7F8C;
+  --rail-bg: #3C78B0;
+  --tile-a: #EAF3FA;
+  --tile-b: #F4F0E7;
+  --skills-bg: #DCE8F2;
 
   --display: "Archivo", "Helvetica Neue", Arial, sans-serif;
-  --body: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --body: "Archivo", "Helvetica Neue", Arial, sans-serif;
   --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
 
   --measure: 64ch;
@@ -534,28 +574,36 @@
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --paper: #131617;
-    --raise: #191D1F;
-    --ink: #ECE8E0;
-    --ink-2: #98A29F;
-    --rule: #282D2F;
-    --rule-soft: #202527;
-    --verified: #E4813C;
-    --verified-bg: #2A1D14;
-    --open: #8FA09D;
+    --paper: #112538;
+    --raise: #19344D;
+    --ink: #F7F3E9;
+    --ink-2: #BCCDDD;
+    --rule: #385570;
+    --rule-soft: #29465F;
+    --verified: #86BCE7;
+    --verified-bg: #1D405E;
+    --open: #9CB1C2;
+    --rail-bg: #285D8D;
+    --tile-a: #183550;
+    --tile-b: #20415D;
+    --skills-bg: #244760;
   }
 }
 
 :root[data-theme="dark"] {
-  --paper: #131617;
-  --raise: #191D1F;
-  --ink: #ECE8E0;
-  --ink-2: #98A29F;
-  --rule: #282D2F;
-  --rule-soft: #202527;
-  --verified: #E4813C;
-  --verified-bg: #2A1D14;
-  --open: #8FA09D;
+  --paper: #112538;
+  --raise: #19344D;
+  --ink: #F7F3E9;
+  --ink-2: #BCCDDD;
+  --rule: #385570;
+  --rule-soft: #29465F;
+  --verified: #86BCE7;
+  --verified-bg: #1D405E;
+  --open: #9CB1C2;
+  --rail-bg: #285D8D;
+  --tile-a: #183550;
+  --tile-b: #20415D;
+  --skills-bg: #244760;
 }
 
 * {
@@ -635,6 +683,8 @@ a {
   display: block;
   width: 100%;
   height: auto;
+  filter: drop-shadow(0 1px 2px rgb(0 0 0 / 0.18));
+  opacity: 0.96;
 }
 
 .name {
@@ -652,7 +702,7 @@ a {
   max-width: none;
   font-size: 1rem;
   line-height: 1.52;
-  margin: 0;
+  margin: 0 0 0.85rem;
   color: var(--ink);
 }
 
@@ -669,9 +719,18 @@ a {
 }
 
 .rail-contact {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0.32rem;
   margin-top: auto;
   padding-top: 1rem;
   border-top: 1px solid var(--rule);
+}
+
+.rail-contact .contact-link {
+  padding-inline: 0.48rem;
+  font-size: 0.7rem;
+  white-space: nowrap;
 }
 
 .contact-link {
@@ -1106,7 +1165,7 @@ h3 {
 .evidence b {
   font-family: var(--mono);
   font-weight: 500;
-  font-size: 0.87em;
+  font-size: inherit;
   font-variant-numeric: tabular-nums;
   letter-spacing: -0.01em;
 }
@@ -1174,9 +1233,13 @@ figure.plate figcaption {
 
 .courses {
   display: grid;
-  grid-template-columns: minmax(0, 0.72fr) minmax(0, 1.28fr);
+  grid-template-columns: minmax(0, 1.28fr) minmax(0, 0.72fr);
   gap: 2.5rem;
   padding-block: 0 1rem;
+}
+
+#skills {
+  scroll-margin-top: 1.5rem;
 }
 
 .course-group {
@@ -2035,5 +2098,219 @@ figure.plate figcaption {
 
   .entry-aviation>.body {
     margin-top: 1rem;
+  }
+}
+
+/* Give the navigation rail and project tiles clearly separate surfaces. */
+.identity-rail {
+  --raise: var(--rail-bg);
+  --ink: #FFF9EE;
+  --ink-2: #DFEAF3;
+  --rule: rgb(255 255 255 / 0.34);
+  --rule-soft: rgb(255 255 255 / 0.18);
+  --verified: #FFF0C4;
+  --verified-bg: rgb(255 255 255 / 0.1);
+  --open: #DFEAF3;
+  margin-left: calc(clamp(1.5rem, 4.5vw, 4.5rem) * -1);
+  padding-left: clamp(1.5rem, 4.5vw, 4.5rem);
+  padding-right: clamp(1.4rem, 2.4vw, 2.4rem);
+  background: var(--rail-bg);
+  border-right: 1px solid color-mix(in srgb, var(--rule) 70%, var(--open) 30%);
+  box-shadow: 12px 0 32px rgb(0 0 0 / 0.045);
+}
+
+.entry {
+  margin-bottom: 1.35rem;
+  padding: clamp(1.25rem, 2vw, 2rem);
+  border: 1px solid var(--rule-soft);
+  border-radius: 5px;
+  box-shadow: 0 8px 24px rgb(0 0 0 / 0.035);
+  overflow: hidden;
+}
+
+.entry>.tile-heading {
+  grid-column: 1 / -1;
+  width: 100%;
+  margin: 0 0 1.25rem;
+  padding: 0 0 0.9rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--verified) 30%, var(--rule));
+  text-align: left;
+}
+
+.tile-heading h3 {
+  font-size: clamp(1.55rem, 2.2vw, 2rem);
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.tile-achievement {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.25rem 0.55rem;
+  margin: 0.42rem 0 0;
+  color: var(--verified);
+  font-size: 0.82rem;
+  line-height: 1.4;
+}
+
+.tile-achievement .ic {
+  width: 0.95rem;
+  height: 0.95rem;
+  flex: none;
+}
+
+.tile-achievement strong {
+  font-weight: 700;
+}
+
+.project-groups>.entry:first-of-type {
+  padding-top: clamp(1.25rem, 2vw, 2rem);
+  border-top: 1px solid var(--rule-soft);
+}
+
+.entry-ftc,
+.entry-aviation,
+.entry-sign-language {
+  background: var(--tile-a);
+}
+
+.entry-testify,
+.entry-guidelight,
+.entry-smart-cart {
+  background: var(--tile-b);
+}
+
+@media (max-width:980px) {
+  .identity-rail {
+    margin-inline: calc(clamp(1.5rem, 4.5vw, 4.5rem) * -1);
+    padding-inline: clamp(1.5rem, 4.5vw, 4.5rem);
+    border-right: 0;
+    box-shadow: 0 12px 28px rgb(0 0 0 / 0.045);
+  }
+}
+
+@media (max-width:720px) {
+  .entry {
+    padding: 1.15rem;
+  }
+}
+
+/* Consistent, readable type scale across every project card. */
+.workstream .tile-heading h3 {
+  font-size: clamp(1.65rem, 2vw, 1.95rem);
+  line-height: 1.12;
+}
+
+.workstream .tile-achievement {
+  font-size: 0.88rem;
+  line-height: 1.45;
+}
+
+.workstream .what {
+  font-size: 1rem;
+  line-height: 1.62;
+}
+
+.workstream .evidence li,
+.workstream .limit,
+.workstream .why {
+  font-size: 0.94rem;
+  line-height: 1.55;
+}
+
+.workstream .spec,
+.workstream .reach,
+.workstream .shot figcaption {
+  font-size: 0.72rem;
+  line-height: 1.5;
+}
+
+.workstream .project-proof-title {
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+}
+
+.workstream .proof-overview span,
+.workstream .project-proof dt {
+  font-size: 0.7rem;
+}
+
+.workstream .proof-overview b,
+.workstream .project-proof dd,
+.workstream .proof-stories p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.workstream .proof-stories b {
+  font-size: 0.78rem;
+}
+
+.workstream .project-proof-links,
+.workstream .project-proof-actions {
+  font-size: 0.76rem;
+}
+
+/* Project entries read as alternating page bands rather than floating cards. */
+.project-group-label-more {
+  display: none;
+}
+
+.project-groups {
+  gap: 0;
+}
+
+.project-groups>.entry,
+.project-groups>.entry:first-of-type {
+  width: 100%;
+  margin: 0;
+  padding: clamp(2rem, 3vw, 3rem) clamp(1.4rem, 2.5vw, 2.6rem);
+  border: 0;
+  border-bottom: 1px solid var(--rule-soft);
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.workstream {
+  padding-top: 0;
+}
+
+#skills {
+  margin: 0;
+  padding: clamp(2rem, 3vw, 3rem) clamp(1.4rem, 2.5vw, 2.6rem);
+  background: var(--skills-bg);
+  border-top: 1px solid var(--rule);
+}
+
+#skills .sec-label {
+  margin-bottom: 1.2rem;
+  color: var(--ink);
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
+#skills .course-group {
+  border: 1px solid color-mix(in srgb, var(--verified) 24%, var(--rule));
+  border-top: 3px solid var(--verified);
+  border-radius: 5px;
+  background: color-mix(in srgb, var(--raise) 88%, transparent);
+}
+
+@media (min-width:981px) {
+  .workstream {
+    margin-left: calc(clamp(2rem, 4vw, 4.5rem) * -1);
+    margin-right: calc(clamp(1.5rem, 4.5vw, 4.5rem) * -1);
+  }
+}
+
+.project-groups .project-proof {
+  background: transparent;
+}
+
+@media (max-width:980px) {
+  .workstream {
+    margin-inline: calc(clamp(1.5rem, 4.5vw, 4.5rem) * -1);
+    padding-top: 0;
   }
 }

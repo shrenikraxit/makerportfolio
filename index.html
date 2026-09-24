@@ -9,9 +9,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet"
-  href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&amp;family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap">
+  href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap">
 
-<link rel="stylesheet" href="style.css?v=18">
+<link rel="stylesheet" href="style.css?v=36">
 </head>
 <body>
 
@@ -81,15 +81,16 @@
     <aside class="identity-rail" aria-label="Portfolio navigation and profile">
       <div class="rail-main">
         <div class="brand-heading">
-          <span class="brand-mark" aria-hidden="true"><img class="brand-icon" src="brand-icon-transparent.png" alt=""></span>
+          <span class="brand-mark" aria-hidden="true"><img class="brand-icon" src="brand-icon-white.png" alt=""></span>
           <h1 class="name">Shrenik Rakshit</h1>
         </div>
         <p class="standfirst">I&rsquo;m a high school senior, independent researcher, and project builder exploring how
-          technology, people, and information work together as one system. I bring that lens from 5+ years in FTC
-          robotics, where I captained a chapter champion, state-ranked team.</p>
+          technology, people, and information work together as one system.</p>
+        <a class="contact-link rail-resume" href="resume.pdf" data-pdf-overlay data-pdf-src="resume.pdf" data-pdf-title="Shrenik Rakshit — Resume">
+          <svg class="ic" aria-hidden="true"><use href="#i-resume" /></svg><span>View resume</span><span aria-hidden="true">&nearr;</span>
+        </a>
         <nav class="start-here" aria-labelledby="start-here-title">
-          <p class="section-kicker" id="start-here-title">Start here</p>
-          <p class="start-here-intro">Three projects that best represent how I lead, build, and investigate.</p>
+          <p class="section-kicker" id="start-here-title">Selected work</p>
           <ol>
             <li>
               <a href="#ftc-robotics">
@@ -117,18 +118,15 @@
         <nav class="project-map" aria-label="Project map">
           <p class="section-kicker">Other projects</p>
           <ul>
-            <li><a href="#testify"><b>Testify</b></a></li>
-            <li><a href="#reading-sign-language"><b>Reading Sign Language</b></a></li>
-            <li><a href="#smart-cart"><b>Smart Cart</b></a></li>
+            <li><a href="#testify"><span class="start-here-theme">Learning &amp; access</span><b>Testify</b></a></li>
+            <li><a href="#reading-sign-language"><span class="start-here-theme">AI &amp; accessibility</span><b>Reading Sign Language</b></a></li>
+            <li><a href="#smart-cart"><span class="start-here-theme">Embedded systems</span><b>Smart Cart</b></a></li>
           </ul>
         </nav>
       </div>
       <nav class="contact rail-contact" aria-label="Profile links">
-        <a class="contact-link" href="data-interest/">
-          <svg class="ic" aria-hidden="true"><use href="#i-data" /></svg><span>Data Stories</span>
-        </a>
-        <a class="contact-link" href="resume.pdf" target="_blank" rel="noopener noreferrer">
-          <svg class="ic" aria-hidden="true"><use href="#i-resume" /></svg><span>Resume</span>
+        <a class="contact-link" href="#skills">
+          <svg class="ic" aria-hidden="true"><use href="#i-compute" /></svg><span>Skills</span>
         </a>
         <a class="contact-link" href="https://github.com/shrenikraxit" target="_blank" rel="noopener noreferrer">
           <svg class="ic" aria-hidden="true"><use href="#i-github" /></svg><span>GitHub</span>
@@ -147,9 +145,11 @@
 
     <main class="workstream" id="projects">
   <section class="sec project-groups">
-    <p class="project-group-label project-group-label-selected">Selected work</p>
-
     <article class="entry entry-featured entry-ftc" id="ftc-robotics">
+      <header class="tile-heading">
+        <h3>FTC Robotics</h3>
+        <p class="tile-achievement"><svg class="ic" aria-hidden="true"><use href="#i-verified" /></svg><strong>2023 Central Conference Finalist</strong><span aria-hidden="true">&middot;</span><strong>2024 Motivate Award, 2nd Place</strong></p>
+      </header>
       <div class="spec">
         <figure class="shot shot-carousel">
           <div class="shot-rotator" data-rotator data-interval="4500">
@@ -167,12 +167,6 @@
         </figure>
       </div>
       <div class="body">
-        <div class="head">
-          <h3>FTC Robotics</h3>
-          <span class="cred"><svg class="ic" aria-hidden="true">
-              <use href="#i-verified" />
-            </svg>2023 Central Conference Finalist &middot; 2024 Motivate Award, 2nd Place</span>
-        </div>
         <p class="what">I joined FIRST Tech Challenge in 2021 and competed with The Incinerators, Team 21807, for
           three seasons. As captain in 2023 and 2024, I led an approximately 18-person team through robot development,
           competition, fundraising, and outreach.</p>
@@ -209,6 +203,10 @@
     <p class="project-group-label project-group-label-more">Other projects</p>
 
     <article class="entry entry-secondary entry-testify" id="testify">
+      <header class="tile-heading">
+        <h3>Testify</h3>
+        <p class="tile-achievement"><svg class="ic" aria-hidden="true"><use href="#i-verified" /></svg><strong>Functional WebApp prototype, Congressional App Challenge 2024 Honorable Mention</strong></p>
+      </header>
       <div class="spec"><span class="yr">2024</span><span class="cat"><svg class="ic" aria-hidden="true">
             <use href="#i-people" />
           </svg>People &amp; access</span>
@@ -219,12 +217,6 @@
         <p class="reach">User tested with 10 friends.</p>
       </div>
       <div class="body">
-        <div class="head">
-          <h3>Testify</h3>
-          <span class="cred"><svg class="ic" aria-hidden="true">
-              <use href="#i-verified" />
-            </svg>Congressional App Challenge, Honorable Mention</span>
-        </div>
         <p class="what">Practice is what fixes test anxiety, but practice questions come from somewhere else: a generic
           question bank, or a tutor most families can’t afford. Neither knows what your teacher assigned. Testify
           generates tests from a student’s own uploaded materials, so the questions can only come from what they
@@ -249,6 +241,10 @@
     </article>
 
     <article class="entry entry-featured entry-guidelight" id="guidelight">
+      <header class="tile-heading">
+        <h3>GuideLight</h3>
+        <p class="tile-achievement"><svg class="ic" aria-hidden="true"><use href="#i-verified" /></svg><strong>Functional iPhone prototype</strong><span aria-hidden="true">&middot;</span><strong>Congressional App Challenge 2025</strong></p>
+      </header>
       <div class="spec">
         <figure class="shot shot-carousel guidelight-carousel">
           <div class="shot-rotator" data-rotator data-interval="5000">
@@ -275,10 +271,6 @@
         </figure>
       </div>
       <div class="body">
-        <div class="head">
-          <h3>GuideLight</h3>
-          <span class="cred"><svg class="ic" aria-hidden="true"><use href="#i-verified" /></svg>Functional iPhone prototype &middot; Congressional App Challenge 2025</span>
-        </div>
         <p class="what">Indoor navigation remains a major gap in independent travel for blind and low-vision people.
           A white cane helps detect nearby obstacles, but it cannot identify a classroom, doorway, ordering counter, or
           route through an unfamiliar building. I built GuideLight to turn an iPhone into a calm, voice-first indoor
@@ -314,6 +306,10 @@
     </article>
 
     <article class="entry entry-featured entry-aviation" id="aviation-recovery">
+      <header class="tile-heading">
+        <h3>Novel Analysis of Post-COVID Hub Performance in the US</h3>
+        <p class="tile-achievement"><svg class="ic" aria-hidden="true"><use href="#i-verified" /></svg><strong>2025&ndash;2026 Semifinalist, Columbia Junior Science Journal</strong></p>
+      </header>
       <div class="spec">
         <figure class="shot"><img src="map.jpg" width="1000" height="637" loading="lazy"
             alt="Map of the continental United States shaded green where recovering airports outnumber declining ones and red where the reverse holds.">
@@ -321,15 +317,11 @@
         </figure>
       </div>
       <div class="body">
-        <div class="head">
-          <h3>Small Airports, Big Comeback</h3>
-          <span class="cred"><svg class="ic" aria-hidden="true"><use href="#i-verified" /></svg>CJSJ semifinalist &middot; 2025&ndash;2026</span>
-        </div>
         <p class="what">After COVID, I noticed that some small airports seemed busier than before. I wanted to know if
           this was happening across the country, so I analyzed 16 years of federal passenger records from 1,038 U.S.
           airports. I compared traffic before and after the shutdown years and found that small hubs grew much faster
           than major hubs.</p>
-        <p class="deeper"><a class="paper-cta" href="aviation-recovery-paper.pdf" data-pdf-overlay>
+        <p class="deeper"><a class="paper-cta" href="aviation-recovery-paper.pdf" data-pdf-overlay data-pdf-src="aviation-recovery-paper.pdf" data-pdf-title="Post-COVID Aviation Recovery">
             <svg class="action-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M19 2H8a2 2 0 0 0-2 2v4H5a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h1a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2Zm0 18H8v-2h9a2 2 0 0 0 2-2v4Zm0-4H5v-6h14v6ZM8 8V4h11v4H8Z"/><path fill="currentColor" d="M6 11h2.1c1.4 0 2.3.8 2.3 2s-.9 2-2.3 2H7.3v1H6v-5Zm2 2.9c.7 0 1.1-.3 1.1-.9s-.4-.9-1.1-.9h-.7v1.8H8Zm3.1-2.9h2c1.8 0 3 1 3 2.5s-1.2 2.5-3 2.5h-2v-5Zm1.9 3.9c1 0 1.7-.5 1.7-1.4s-.7-1.4-1.7-1.4h-.6v2.8h.6Zm3.7-3.9H20v1.1h-2v1h1.8v1.1H18V16h-1.3v-5Z"/></svg>
             Read the full research paper <span aria-hidden="true">&nearr;</span></a></p>
       </div>
@@ -351,6 +343,7 @@
     </article>
 
     <article class="entry entry-secondary entry-sign-language" id="reading-sign-language">
+      <header class="tile-heading"><h3>Reading Sign Language</h3></header>
       <div class="spec"><span class="yr">2023&ndash;2024</span><span class="cat"><svg class="ic" aria-hidden="true">
             <use href="#i-people" />
           </svg>People &amp; access</span>
@@ -361,9 +354,6 @@
         <p class="reach">In progress.</p>
       </div>
       <div class="body">
-        <div class="head">
-          <h3>Reading Sign Language</h3>
-        </div>
         <p class="what">Sign language is not gesture. It has grammar, and meaning lives in movement over time, not in
           any single frame. I fine-tuned a video transformer to read it and found out that the model is never the hard
           part.</p>
@@ -388,6 +378,7 @@
     </article>
 
     <article class="entry entry-secondary entry-smart-cart" id="smart-cart">
+      <header class="tile-heading"><h3>Smart Cart</h3></header>
       <div class="spec"><span class="yr">2024&ndash;2025</span><span class="cat"><svg class="ic" aria-hidden="true">
             <use href="#i-process" />
           </svg>Process &amp; throughput</span>
@@ -397,9 +388,6 @@
         <p class="reach">Prototype built, in progress.</p>
       </div>
       <div class="body">
-        <div class="head">
-          <h3>Smart Cart</h3>
-        </div>
         <p class="what">A shopping cart that tallies items as you go, moving checkout out of the queue and into the
           aisle. Onboard sensing and item recognition on Arduino, aimed at the smaller retailers who can’t buy
           enterprise automation.</p>
@@ -414,9 +402,22 @@
     </article>
   </section>
 
-  <section class="sec">
-    <p class="sec-label">Coursework</p>
+  <section class="sec" id="skills">
+    <p class="sec-label">Skills</p>
     <div class="courses">
+      <div class="course-group">
+        <h4><svg class="ic" aria-hidden="true">
+            <use href="#i-compute" />
+          </svg>Self-taught skills</h4>
+        <ul>
+          <li><b>Programming</b><em>Java, Python, Swift, SwiftUI, HTML, CSS, JavaScript, Arduino</em></li>
+          <li><b>Data &amp; research</b><em>pandas, NumPy, SciPy, Plotly, statistical testing, data cleaning, aggregation, and visualization</em></li>
+          <li><b>AI &amp; computer vision</b><em>YOLOv8, Core ML, video transformers, object detection, camera vision, embeddings, retrieval, and generated-question pipelines</em></li>
+          <li><b>Mobile &amp; cloud</b><em>ARKit, LiDAR mapping, voice interfaces, haptics, shortest-path routing, AWS storage, and accessible iOS design</em></li>
+          <li><b>Robotics &amp; fabrication</b><em>Sensor fusion, localization, motion profiling, autonomous path following, CAD, 3D printing, and waterjet cutting</em></li>
+          <li><b>Product development</b><em>Prototyping, field testing, technical presentations, competition strategy, fundraising, and user feedback</em></li>
+        </ul>
+      </div>
       <div class="course-group">
         <h4><svg class="ic" aria-hidden="true">
             <use href="#i-data" />
@@ -432,19 +433,6 @@
           <li>AP Macroeconomics</li>
         </ul>
       </div>
-      <div class="course-group">
-        <h4><svg class="ic" aria-hidden="true">
-            <use href="#i-compute" />
-          </svg>Self-taught skills</h4>
-        <ul>
-          <li><b>Programming</b><em>Java, Python, Swift, SwiftUI, HTML, CSS, JavaScript, Arduino</em></li>
-          <li><b>Data &amp; research</b><em>pandas, NumPy, SciPy, Plotly, statistical testing, data cleaning, aggregation, and visualization</em></li>
-          <li><b>AI &amp; computer vision</b><em>YOLOv8, Core ML, video transformers, object detection, camera vision, embeddings, retrieval, and generated-question pipelines</em></li>
-          <li><b>Mobile &amp; cloud</b><em>ARKit, LiDAR mapping, voice interfaces, haptics, shortest-path routing, AWS storage, and accessible iOS design</em></li>
-          <li><b>Robotics &amp; fabrication</b><em>Sensor fusion, localization, motion profiling, autonomous path following, CAD, 3D printing, and waterjet cutting</em></li>
-          <li><b>Product development</b><em>Prototyping, field testing, technical presentations, competition strategy, fundraising, and user feedback</em></li>
-        </ul>
-      </div>
     </div>
   </section>
 
@@ -456,18 +444,18 @@
   <div class="pdf-viewer-shell">
     <header class="pdf-viewer-bar">
       <div>
-        <span class="pdf-viewer-label">Research paper</span>
-        <h2 id="paper-viewer-title">Post-COVID Aviation Recovery</h2>
+        <span class="pdf-viewer-label">Document viewer</span>
+        <h2 id="paper-viewer-title">Document</h2>
       </div>
       <div class="pdf-viewer-actions">
-        <a href="aviation-recovery-paper.pdf" target="_blank" rel="noopener noreferrer">Open separately &nearr;</a>
-        <button type="button" data-pdf-close aria-label="Close research paper">Close</button>
+        <a href="aviation-recovery-paper.pdf" data-pdf-open target="_blank" rel="noopener noreferrer">Open separately &nearr;</a>
+        <button type="button" data-pdf-close aria-label="Close document">Close</button>
       </div>
     </header>
-    <iframe src="aviation-recovery-paper.pdf#view=FitH" title="Post-COVID Aviation Recovery research paper"></iframe>
+    <iframe src="aviation-recovery-paper.pdf#view=FitH" title="Document viewer"></iframe>
   </div>
 </dialog>
 
-<script src="app.js?v=20260923-1"></script>
+<script src="app.js?v=20260924-1"></script>
 </body>
 </html>

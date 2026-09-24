@@ -49,24 +49,39 @@
   }
 })();
 
-/* Open the aviation paper without leaving the portfolio. The link remains a
+/* Open linked PDFs without leaving the portfolio. Each trigger remains a
    normal PDF link when dialog support or JavaScript is unavailable. */
 (function () {
   function initPaperViewer() {
-    var trigger = document.querySelector("[data-pdf-overlay]");
+    var triggers = document.querySelectorAll("[data-pdf-overlay]");
     var viewer = document.getElementById("paper-viewer");
-    if (!trigger || !viewer || typeof viewer.showModal !== "function") return;
+    if (!triggers.length || !viewer || typeof viewer.showModal !== "function") return;
 
     var close = viewer.querySelector("[data-pdf-close]");
+    var frame = viewer.querySelector("iframe");
+    var title = viewer.querySelector("#paper-viewer-title");
+    var openSeparate = viewer.querySelector("[data-pdf-open]");
+    var activeTrigger = null;
 
-    trigger.addEventListener("click", function (event) {
-      event.preventDefault();
-      viewer.showModal();
+    triggers.forEach(function (trigger) {
+      trigger.addEventListener("click", function (event) {
+        event.preventDefault();
+        var source = trigger.dataset.pdfSrc || trigger.getAttribute("href");
+        var documentTitle = trigger.dataset.pdfTitle || "Document";
+        activeTrigger = trigger;
+        if (frame) {
+          frame.src = source + "#view=FitH";
+          frame.title = documentTitle;
+        }
+        if (title) title.textContent = documentTitle;
+        if (openSeparate) openSeparate.href = source;
+        viewer.showModal();
+      });
     });
 
     if (close) close.addEventListener("click", function () {
       viewer.close();
-      trigger.focus();
+      if (activeTrigger) activeTrigger.focus();
     });
 
     viewer.addEventListener("click", function (event) {
